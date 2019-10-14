@@ -1,3 +1,7 @@
+sed -i -e "s/\#DNSStubListener\=yes/DNSStubListener\=no/" /etc/systemd/resolved.conf
+sudo systemctl disable systemd-resolved
+sudo systemctl stop systemd-resolved
+
 apt install dnsmasq
 
 sed -i -e "s/\#resolv\-file\=/resolv\-file\=\/etc\/resolv\.dnsmasq\.conf/" -e "s/\#strict\-order/strict\-order/" /etc/dnsmasq.conf

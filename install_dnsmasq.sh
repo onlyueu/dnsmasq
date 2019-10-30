@@ -12,5 +12,8 @@ sed -i -e "s/\#resolv\-file\=/resolv\-file\=\/etc\/resolv\.dnsmasq\.conf/" -e "s
 echo "log-queries" >> /etc/dnsmasq.conf
 echo "log-facility=/var/log/dnsmasq.log" >> /etc/dnsmasq.conf
 
+wget -c https://raw.githubusercontent.com/onlyueu/dnsmasq/master/mobi.conf
+mv mobi.conf /etc/dnsmasq.d/
+
 systemctl start dnsmasq
 systemctl enable dnsmasq
